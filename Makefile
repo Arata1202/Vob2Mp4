@@ -1,8 +1,6 @@
-build:
-	@docker compose build
-
 run:
 	@chmod -R 777 ./input/VIDEO_TS/
+	@docker compose build
 	@docker compose run --rm app
 
-.PHONY: build run
+.PHONY: run
