@@ -9,3 +9,5 @@ services:
       - ./input:/app/input
       - ./output:/app/output
     working_dir: /app
+    env_file:
+      - .env

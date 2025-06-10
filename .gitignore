@@ -1,1 +1,6 @@
 .env
+input/*
+output/*
+!input/.gitkeep
+!output/raw/.gitkeep
+!output/mp4/.gitkeep
