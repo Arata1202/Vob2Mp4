@@ -6,6 +6,11 @@ set -a
 source .env
 set +a
 
+if [ -z "$DIR_NAME" ]; then
+  echo "Error: DIR_NAME is not set. Please set DIR_NAME in the .env file." >&2
+  exit 1
+fi
+
 RAW_DIR="./output/raw/$DIR_NAME"
 MP4_DIR="./output/mp4/$DIR_NAME"
 
@@ -24,3 +29,5 @@ for file in "$RAW_DIR/VIDEO_TS/"*.[Vv][Oo][Bb]; do
          "$MP4_DIR/part${i}.mp4"
   i=$((i+1))
 done
+
+echo 'DIR_NAME=""' > .env
