@@ -37,7 +37,7 @@ convert_to_mp4() {
   local input_file="$1"
   local output_file="$2"
 
-  ffmpeg -i "$input_file" -map 0:v:0 -map 0:a:0? -c:v libx264 -preset slow -crf 23 \
+  ffmpeg -i "$input_file" -map 0:v:0 -map '0:a:0?' -c:v libx264 -preset slow -crf 23 \
          -c:a aac -b:a 192k -movflags +faststart \
          "$output_file"
 }
