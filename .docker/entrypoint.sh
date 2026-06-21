@@ -3,10 +3,6 @@
 set -e
 shopt -s nullglob
 
-set -a
-source .env
-set +a
-
 if [ -z "$DIR_NAME" ]; then
   echo "Error: DIR_NAME is not set. Please set DIR_NAME in the .env file." >&2
   exit 1
